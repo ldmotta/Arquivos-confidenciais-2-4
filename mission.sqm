@@ -13,8 +13,7 @@ class Mission
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Air_F_Beta_Heli_Attack_01",
-		"A3_Characters_F_Civil",
-		"A3_Structures_F_Mil_Fortification"
+		"A3_Characters_F_Civil"
 	};
 	addOnsAuto[]=
 	{
@@ -28,7 +27,6 @@ class Mission
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Air_F_Beta_Heli_Attack_01",
-		"A3_Structures_F_Mil_Fortification",
 		"a3_map_altis"
 	};
 	randomSeed=8327785;
@@ -626,14 +624,15 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20256.43,52.361774,11682.651};
+					position[]={20226.771,52.207287,9774.8789};
 					id=15;
 					side="WEST";
 					vehicle="B_Soldier_A_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					init="player setDamage 0;";
+					text="men";
+					init="this setDamage 0;";
 					syncId=10;
 					synchronizations[]={0};
 				};
@@ -682,7 +681,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			position[]={16712.713,11.998986,13643.74};
@@ -795,16 +794,6 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
-		class Item11
-		{
-			position[]={20218.258,52.592468,9784.0361};
-			azimut=72.15786;
-			id=29;
-			side="EMPTY";
-			vehicle="Land_HBarrierWall_corner_F";
-			leader=1;
-			skill=0.60000002;
-		};
 	};
 	class Markers
 	{
@@ -834,7 +823,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={20077.406,63.851379,9812.749};
+			position[]={19681.871,52.007885,10572.193};
 			name="area2";
 			text="Torre de comunicação";
 			markerType="RECTANGLE";
