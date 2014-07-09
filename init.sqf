@@ -1,3 +1,4 @@
+// Arquivo de inicialização
 
 if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
 if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
@@ -19,7 +20,6 @@ null = [] execVM "briefing.sqf";
 // call compile preprocessFileLineNumbers "scripts\UPSMON\!R\markerAlpha.sqf";
 // call compile preprocessFileLineNumbers "scripts\fhqtt.sqf";
 // call compile preprocessFileLineNumbers "scripts\Init_UPSMON.sqf";	
-
 
 
 //Ocupation
