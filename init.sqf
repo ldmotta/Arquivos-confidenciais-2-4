@@ -1,5 +1,4 @@
 // Arquivo de inicialização
-// Apenas outro comentário
 
 if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
 if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
