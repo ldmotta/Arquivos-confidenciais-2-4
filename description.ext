@@ -1,0 +1,22 @@
+author="M0TT4";
+OnLoadName = "Arquivos confidenciais 2";
+OnLoadMission = "Uma força tarefa da A3CN foi designada para recuperar documentos confidenciais.";
+loadScreen = "images\loadScreen.paa";
+debriefing=1;
+showGPS=1;
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 20;
+};
+
+class CfgMusic 
+{ 
+	tracks[]={}; 
+	class music1
+	{ 
+		name = ""; sound[] = {\music\sympathy.ogg, db+1, 1.0}; 
+	}; 
+};

@@ -1,0 +1,1143 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"a3_map_altis",
+		"A3_Modules_F_Intel",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Modules_F",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Characters_F_Civil",
+		"A3_Structures_F_Mil_Fortification"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Modules_F_Intel",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Modules_F",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_Civil",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Structures_F_Mil_Fortification",
+		"a3_map_altis"
+	};
+	randomSeed=8327785;
+	class Intel
+	{
+		briefingName="Arquivos Confidenciais 2";
+		overviewText="Recuperar os arquivos confidenciais";
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=17;
+		class Item0
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20534.766,34.450283,8880.3867};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="task1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Eliminar bloqueio e dominar Panagia";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Panagia é uma cidade controlada pelo exército inimigo que por sua posição geográfica exerce grande influência no controle da rodovia que pode ser usada para transporte de armas e munição entre o litoral e a cidade de Pyrgos. Nossa tarefa é eliminar o bloquei e dominar este ponto estratégico.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="CREATED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=0;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=0;
+					synchronizations[]={1,10};
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20547.129,34.843452,8885.4424};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=1;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=1;
+					synchronizations[]={0,11};
+				};
+			};
+		};
+		class Item2
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={20279.139,48.720722,11709.465};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="task4";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Resgatar Informante";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Resgatar informante e recuperar Chalkeia";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="CREATED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=2;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=2;
+					synchronizations[]={3,11};
+				};
+				class Item1
+				{
+					position[]={20240.16,48.923744,11707.479};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=3;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=3;
+					synchronizations[]={2,12};
+				};
+			};
+		};
+		class Item3
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18716.924,209.11786,10217.418};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="task5";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Destruir a torre de comunicação";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Destruir os geradores de energia e a torre de comunicação nos dará grande vantagem para o controle de Chalkeia. É imprecindível a eliminação das comunicações inimigas, para que tenhamos sucesso nesta missão, temos que deixá-los as cegas.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="CREATED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=4;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=4;
+					synchronizations[]={5,11};
+				};
+			};
+		};
+		class Item4
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18719.398,209.20058,10220.079};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=5;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=5;
+					synchronizations[]={4,13};
+				};
+			};
+		};
+		class Item5
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16722.441,18.833599,12669.524};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="task3";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Resgatar documentos roubados";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Após o resgatar dos documentos, precisamos manter o controle da área até o envio do resgate. em seguida seremos informados sobre a posição do ponto de encontro e resgate.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="CREATED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=6;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=6;
+					synchronizations[]={7,15};
+				};
+			};
+		};
+		class Item6
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16734.586,20.402008,12703.166};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=7;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=7;
+					synchronizations[]={14,6};
+				};
+			};
+		};
+		class Item7
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14699.986,17.91,16625.33};
+					azimut=132.368;
+					id=8;
+					side="WEST";
+					vehicle="B_Heli_Transport_01_camo_F";
+					leader=1;
+					skill=0.60000002;
+					text="chopper1";
+				};
+			};
+		};
+		class Item8
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14735.431,17.91,16658.773};
+					azimut=133.396;
+					id=9;
+					side="WEST";
+					vehicle="B_Heli_Transport_01_camo_F";
+					leader=1;
+					skill=0.60000002;
+					text="chopper2";
+				};
+			};
+		};
+		class Item9
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14773.186,17.91,16695.957};
+					azimut=136.68239;
+					id=10;
+					side="WEST";
+					vehicle="B_Heli_Light_01_armed_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item10
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14808.243,17.91,16732.525};
+					azimut=136.68239;
+					id=11;
+					side="WEST";
+					vehicle="B_Heli_Light_01_armed_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item11
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20003.666,59.768211,11425.231};
+					azimut=145;
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="task6";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Extração do informante";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Escoltar o informante para um local seguro onde ele será extraído em segurança para a base aliada.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="CREATED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=12;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=8;
+					synchronizations[]={9,12};
+				};
+			};
+		};
+		class Item12
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={19984.52,60.112576,11456.532};
+					azimut=145;
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=13;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=9;
+					synchronizations[]={8,15};
+				};
+			};
+		};
+		class Item13
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={30326.725,-0.071318045,16192.617};
+					id=14;
+					side="LOGIC";
+					vehicle="LocationBase_F";
+					leader=1;
+					skill=0.60000002;
+					init="nul = call compile preprocessFile ""scripts\UPSMON\!R\markerAlpha.sqf"";";
+					description="Remove todos os markes de área.";
+				};
+			};
+		};
+		class Item14
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20256.43,52.361774,11682.651};
+					id=15;
+					side="WEST";
+					vehicle="B_Soldier_A_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					init="player setDamage 0;";
+					syncId=10;
+					synchronizations[]={0};
+				};
+			};
+		};
+		class Item15
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16820.486,23.997162,12660.948};
+					id=16;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="invasao";
+				};
+			};
+		};
+		class Item16
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20260.316,51.322414,11692.136};
+					azimut=-5.5756798;
+					special="CARGO";
+					age="ACTUAL";
+					id=17;
+					side="CIV";
+					vehicle="C_man_polo_3_F";
+					leader=1;
+					skill=0.60000002;
+					text="bil";
+					init="this addAction [""Interrogar"",""scripts\civ_i.sqf"",[false],1,false,true,"""",""(_target distance _this) < 3""];this disableAI ""MOVE"";";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=12;
+		class Item0
+		{
+			position[]={16712.713,11.998986,13643.74};
+			azimut=397.88849;
+			id=18;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={16666.875,12.470819,13610.313};
+			azimut=397.88849;
+			id=19;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={14701.264,17.91,16623.719};
+			azimut=223.002;
+			id=20;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item3
+		{
+			position[]={14736.575,17.91,16657.4};
+			azimut=223.002;
+			id=21;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item4
+		{
+			position[]={14773.512,17.91,16695.527};
+			azimut=223.002;
+			id=22;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item5
+		{
+			position[]={14808.563,17.91,16732.283};
+			azimut=223.002;
+			id=23;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item6
+		{
+			position[]={14656.895,17.91,16706.109};
+			azimut=132.94164;
+			id=24;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item7
+		{
+			position[]={14720.476,17.91,16767.867};
+			azimut=222.03008;
+			id=25;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			leader=1;
+			skill=0.60000002;
+			description="Remove todos os markes de área.";
+		};
+		class Item8
+		{
+			position[]={20830.082,27.949806,7260.146};
+			id=26;
+			side="EMPTY";
+			vehicle="Box_IND_AmmoOrd_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item9
+		{
+			position[]={20827.49,27.940954,7266.7935};
+			azimut=-98.648529;
+			id=27;
+			side="EMPTY";
+			vehicle="B_Heli_Attack_01_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item10
+		{
+			position[]={20826.086,27.950001,7259.2827};
+			id=28;
+			side="EMPTY";
+			vehicle="B_Kitbag_cbr";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={20218.258,52.592468,9784.0361};
+			azimut=72.15786;
+			id=29;
+			side="EMPTY";
+			vehicle="Land_HBarrierWall_corner_F";
+			leader=1;
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=11;
+		class Item0
+		{
+			position[]={21696.93,15.042491,7574.6348};
+			name="area0";
+			text="Cidade de Feres";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=180;
+			b=150;
+			angle=-130.564;
+		};
+		class Item1
+		{
+			position[]={20461.086,36.126347,8860.498};
+			name="area1";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=270;
+			b=200;
+			angle=-377.30801;
+		};
+		class Item2
+		{
+			position[]={20077.406,63.851379,9812.749};
+			name="area2";
+			text="Torre de comunicação";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=50;
+			b=50;
+			angle=-130.564;
+		};
+		class Item3
+		{
+			position[]={20223.256,52.439148,11673.042};
+			name="area4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=250;
+			b=250;
+			angle=-130.564;
+		};
+		class Item4
+		{
+			position[]={16807.486,23.953762,12670.063};
+			name="area5";
+			text="Cidade de Pyrgos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=400;
+			b=400;
+			angle=-130.564;
+		};
+		class Item5
+		{
+			position[]={19178.576,204.65639,9706.1768};
+			name="area6";
+			text="Torre de comunicação";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=50;
+			b=50;
+			angle=-130.564;
+		};
+		class Item6
+		{
+			position[]={18763.115,206.61922,10187.186};
+			name="area3";
+			text="Torre de comunicação";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=200;
+			b=200;
+			angle=-130.564;
+		};
+		class Item7
+		{
+			position[]={16821.631,20.825094,12807.424};
+			name="spawn1";
+			type="Empty";
+			angle=-70.589897;
+		};
+		class Item8
+		{
+			position[]={16696.555,18.545763,12780.321};
+			name="spawn2";
+			type="Empty";
+			angle=-70.589897;
+		};
+		class Item9
+		{
+			position[]={16900.402,19.619909,12603.444};
+			name="spawn3";
+			type="Empty";
+			angle=-70.589897;
+		};
+		class Item10
+		{
+			position[]={16883.25,21.077709,12669.696};
+			name="spawn4";
+			type="Empty";
+			angle=-70.589897;
+		};
+	};
+	class Sensors
+	{
+		items=8;
+		class Item0
+		{
+			position[]={20532.273,35.545326,8892.3525};
+			a=200;
+			b=200;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+			synchronizations[]={1,2,4};
+			syncId=11;
+		};
+		class Item1
+		{
+			position[]={20249.18,53.785473,11669.197};
+			a=200;
+			b=200;
+			interruptable=1;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+			synchronizations[]={3,8};
+			syncId=12;
+		};
+		class Item2
+		{
+			position[]={18709.086,209.01797,10221.686};
+			a=7;
+			b=7;
+			angle=358.44699;
+			rectangular=1;
+			activationBy="STATIC";
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			idStatic=986657;
+			idObject=-1433174495;
+			text="trigger1";
+			name="trigger1";
+			expActiv="hint ""Torre Destruida""";
+			class Effects
+			{
+			};
+			synchronizations[]={5};
+			syncId=13;
+		};
+		class Item3
+		{
+			position[]={16813.766,23.967091,12677.431};
+			a=200;
+			b=200;
+			angle=199.939;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+			synchronizations[]={7};
+			syncId=14;
+		};
+		class Item4
+		{
+			position[]={19984.838,59.857178,11413.261};
+			a=10;
+			b=10;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+			synchronizations[]={9,6};
+			syncId=15;
+		};
+		class Item5
+		{
+			position[]={16693.109,13.229535,13628.74};
+			a=300;
+			b=300;
+			angle=37.606499;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			text="trigger4";
+			name="trigger4";
+			expActiv="null = [trigger4] execVM(""extraction.sqf"");";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={16690.889,13.099614,13626.3};
+			a=300;
+			b=300;
+			angle=37.606487;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			text="PlayMusic";
+			expCond="this && extracted==1;";
+			expActiv="1 fadeMusic 1; playMusic ""music1"";";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={14724.914,17.91,16716.707};
+			a=200;
+			b=300;
+			angle=-134.88501;
+			rectangular=1;
+			activationBy="VEHICLE";
+			interruptable=1;
+			age="UNKNOWN";
+			idVehicle=17;
+			expActiv="A3CN=[West,""HQ""]; A3CN SideChat ""O informante está em segurança na base Mike - 26."";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=15174505;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=5441899;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=13846790;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
