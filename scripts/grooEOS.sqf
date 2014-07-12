@@ -215,7 +215,7 @@ for [{_i=2},{_i<count _UCthis},{_i=_i+1}] do {
 			case "GARRISON":{
 							_spwnposnew = _markerPosition;
 							_ranks	= _garrisonRanks;	
-							_skills = 	[0.25,0.4];
+							_skills = _garrisonSkills;
 							_upsParam = ["FORTIFY","NOMOVE","SHOWMARKER","SPAWNED","DELETE:",60];
 							_units = _garrison;
 							}; 
