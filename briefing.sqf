@@ -15,7 +15,8 @@ switch (side player) do
         player createDiaryRecord ["Diary", ["Execução", "- Furar o bloqueio e dominar a cidade de Panagia para eliminar a possibilidade do transporte de material bélico pela rodovia principal.<br />"+ 
                                             "- Encontrar o informante que indicará a possível localização dos arquivos sercretos roubados.<br />"+ 
                                             "- Sabotar os geradores de energia e a torre de comunicação inimiga para dificultar a comunicação com a base principal.<br />"+ 
-                                            "- Recuperar os arquivos secretos roubados.<br />- Sair em segurança para o local de extração."]];
+                                            "- Recuperar os arquivos secretos roubados.<br />"+
+                                            "- Sair em segurança para o local de extração."]];
 
         player createDiaryRecord ["Diary", ["Situação", "Documentos secretos foram roubados da Base aérea aliada e levados pela coalizão comunista. Um espião "+ 
                                             "foi enviado para localizar estes arquivos mas infelizmente foi capturado pelas forças inimigas. "+ 

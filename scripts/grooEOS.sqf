@@ -35,11 +35,11 @@ if !isServer exitwith {};
 private ["_garrison","_garrisonRanks","_garrisonSkills","_scouts","_scoutsRanks","_scoutsSkills","_Patrol","_PatrolRanks","_PatrolSkills","_Squad","_SquadRanks","_squadSkills","_Platoon","_PlatoonRanks","_PlatoonSkills","_ATTEAM","_ATTEAMRanks","_ATTEAMSkills","_AATEAM","_AATEAMRanks","_AATEAMSkills","_Snipers","_SniperRanks","_SniperSkills","_SpecOps","_SpecOpsRanks","_specOpsSkills","_Armour","_markerPosition","_mkrName","_enemySide","_loop","_debugHint","_debug","_mkrAreaX","_mkrAreaY","_mkrSize","_detectionDistanceY","_detectionDistanceX","_cacheDistanceY","_cacheDistanceX","_radiusPlacement","_reinforcementPlacement","_SideAdjust","_aiSide","_detectionSide","_sideAdjust","_spotFriendlies","_spotEnemies","_UCthis","_i","_e","_Tanks","_crewTanks","_Groups","_UCThis","_spwnposnew","_ranks","_skills","_upsParam","_patrolRanks","_patrolSkills","_patrol","_spwnposNew","_squad","_platton","_atteamSkills","_atteam","_aateamSkills","_aateam","_snipersSkills","_snipers","_SpecOpsSkills","_newGroup","_param","_mkrname","_tankType","_tank","_tanks","_Tank","_crewTank","_spotFriendlyLeaving","_units"];
 
 _garrison 			= [
-						"O_G_Soldier_F",
-						"O_G_Soldier_F",	
-						"O_G_Soldier_GL_F",	
-						"O_G_engineer_F",
-						"O_G_Soldier_exp_F"
+						"I_Soldier_F",
+						"I_Soldier_F",	
+						"I_Soldier_GL_F",	
+						"I_engineer_F",
+						"I_Soldier_exp_F"
 						
 					];
 
@@ -51,13 +51,13 @@ _scoutsRanks 		=[];
 _scoutsSkills		=[0.2,0.5];
 
 _Patrol 			=[
-						"O_G_Soldier_exp_F",
-						"O_G_Soldier_GL_F",
-						"O_G_Soldier_F",
-						"O_G_Soldier_exp_F",
-						"O_G_Soldier_M_F",
-						"O_G_Soldier_M_F",
-						"O_G_Soldier_F"
+						"I_Soldier_exp_F",
+						"I_Soldier_GL_F",
+						"I_Soldier_F",
+						"I_Soldier_exp_F",
+						"I_Soldier_M_F",
+						"I_Soldier_M_F",
+						"I_Soldier_F"
 					];
 
 						
@@ -65,13 +65,13 @@ _PatrolRanks 		=[];
 _PatrolSkills		=[0.6,0.8];
 
 _Squad 				=[
-						"O_G_Soldier_F",
-						"O_G_Soldier_F",
-						"O_G_Soldier_F",
-						"O_G_Soldier_exp_F",
-						"O_G_Soldier_exp_F",
-						"O_G_Soldier_M_F",
-						"O_G_Soldier_M_F"
+						"I_Soldier_F",
+						"I_Soldier_F",
+						"I_Soldier_F",
+						"I_Soldier_exp_F",
+						"I_Soldier_exp_F",
+						"I_Soldier_M_F",
+						"I_Soldier_M_F"
 						
 						
 						
@@ -103,23 +103,23 @@ _AATEAM		  =["O_Soldier_TL_F","O_Soldier_LAT_F","O_Soldier_LAT_F","O_Soldier_LAT
 _AATEAMRanks  =[];
 _AATEAMSkills =[0.25,0.4];
 
-_Snipers		=["O_G_Soldier_M_F","CAF_AG_ME_T_SVD"];
+_Snipers		=["I_Soldier_M_F","CAF_AG_ME_T_SVD"];
 _SniperRanks = [];
 _SniperSkills = [0.7,0.9];
 
 _SpecOps 	=[
-			"O_G_Soldier_exp_F",
-			"O_G_Soldier_F",
-			"O_G_Soldier_F",
-			"O_G_Soldier_exp_F",
-			"O_G_Soldier_M_F",
-			"O_G_Soldier_M_F"
+			"I_Soldier_exp_F",
+			"I_Soldier_F",
+			"I_Soldier_F",
+			"I_Soldier_exp_F",
+			"I_Soldier_M_F",
+			"I_Soldier_M_F"
 			];
 			
 _SpecOpsRanks = [];
 _specOpsSkills = [0.7,0.9];
 
-_Armour		=["CAF_AG_ME_T_Offroad_armed_01"];
+_Armour		=["I_MRAP_03_hmg_F"];
 
 //--------------------------------------------EXECVM PARAMETERS---------------------------------------------------------------
 
@@ -282,7 +282,11 @@ for [{_i=2},{_i<count _UCthis},{_i=_i+1}] do {
 						_newGroup = [_spwnposnew,_sideAdjust,_units,[],[],_skills]call BIS_fnc_spawnGroup;
 
 						_param = [(leader _newGroup),_mkrname] + _upsParam;
+
+						player sidechat format ["%1", _param];
+
 						nul= _param execVM "scripts\UPSMON.sqf";
+
 						_Groups = _Groups + [_newGroup];
 				};
 				
