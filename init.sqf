@@ -63,6 +63,7 @@ call compile preprocessFileLineNumbers "scripts\Init_UPSMON.sqf";
 
 //Process statements stored using setVehicleInit
 // processInitCommands;
+
 //Finish world initialization before mission is launched. 
 finishMissionInit;
 
