@@ -3,6 +3,7 @@
 // Created by: M0TT4: M0TT4
 //////////////////////////////////////////////////////////////////
 _resquePos = (_this select 0);
+
 sleep 1;
 
 // Cria área de pouso na posição do player (Land_HelipadCivil_F, Land_HelipadEmpty_F)
@@ -18,7 +19,8 @@ _wp0_2 setWaypointType "MOVE";
 _wp0_2 setWaypointStatements ["true", "dostop chopper2; chopper2 land 'Get in';"];
 
 // Aguardar até que todas as unidades vivas tenham embarcado
-waituntil {sleep 0.1;({_x in chopper1} count _this)+({_x in chopper2} count _this)==({alive _x} count _this)};
+// waituntil {sleep 0.1;({_x in chopper1} count _this)+({_x in chopper2} count _this)==({alive _x} count _this)};
+waituntil {sleep 0.1;({_x in chopper1} count list _resquePos)+({_x in chopper2} count list _resquePos)==({alive _x} count list _resquePos)};
 
 extracted=1;
 publicVariable "extracted";

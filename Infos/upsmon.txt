@@ -1,50 +1,20 @@
-[EN]
-==============================================================================================
-=== 5.0.9 ====================================================================================
+// ---------------------------------------------------------------------------------------------------------
+//  Autor: Monsada (SMM) 27.11.2009
+//		(smirall@hotmail.com)
+//		http://www.simulacion-esp.com/
+//		Comunidad Hispana de Simulación
+// ---------------------------------------------------------------------------------------------------------
+Para más información y descarga de las últimas versiones o si quieres aportarme alguna idea, visita la página de la
+comunidad hispana de simulación:
 
-Added:
-	  - "noveh" - the group will not search for vehicles (untill in fight and only for combat vehicles). (code improved by: Nordin)
-	  - Counter of civilians killed by players (array): KILLED_CIV_COUNTER [Total, by West, by East, by Resistance, the Killer] (works with civilians placed in editor or spawned by UPSMON)
-      - When player kills a civilian display globalchat info WHO (Player) did it. In "Init_UPSMON.sqf" R_WHO_IS_CIV_KILLER_INFO = 1, Set O to disable this feature.				
-	  - Add UPSMON version info in DEBUG display.  
 
-Modified:	
-      - CBA is NOT required any more !
-      - Turning off ACE Wounds is now optional. (see Init_UPSMON.sqf to set it ON or OFF)  
-	  - Solved bug: Self wounds or friendly fire is treated as damages made by the enemy forces. (NOTE: If the killer is not recognize, AI will use smoke)	
-      - Solved bug: MON_HeliStuckcontrol runs too often as bad speed read.
-	  - Improved: Combat behaviour (now in close distance AI often in COMBAT mode) 
-	  - Improved: Stuck control for vehicles and units.
-      - Improved: Respawn for vehicles (multiple times vehicle respawn allowed)	  
-	  - First parameter coud be Unit or Group. (Make sure when the script starts such GROUP's leader or the UNIT is present 100%).  
-      - Improved Artillery module (code improved by: shay_gman) http://dev-heaven.net/projects/upsmon/wiki/Artillery_module	
-      - Change: armor vehicles using limited speed no matter range when placed directly from editor with default crew. Now the speed depends on the distance to the new targetpos (r.by Demonized)
-      - Fixed small code bugs: ex: {exit=true;}; should be: {_exit=true;};
-	  - Solved bug: Respawn for vehicles not working. (r.by Demonized)
-      - Solved bug 99%: reinforcement AI after getting out of the combat vehicle, often the vehicle did not move.	(r.by seba1976)
-	  
-Misc:
-	  - HMMWV_M998A2_SOV_DES_EP1 added to bugged vehicles for Vanilia players. http://dev-heaven.net/issues/18314
+http://www.simulacion-esp.com/v3/topic/18360-urban-patrol-script-version-monsada/
 
-============================================================================================	  
-=== 5.0.8   ================================================================================
 
-Added:
-      CBA is now required !!!
-      UPSMON switches off "ACE wounds system for AI".
-      "nosmoke" - the group will not use the smoke at all.
-      "onroad" - targetpos will be generated only on roads (unless unit in fight).
-      Civilians do not take vehicles or static weapons (no more stealing).
-Modified:
-      New targetpos depend on the type of the unit (air, water, land) - (water unit only on water etc)
-      Detection of new target/(generate new target) is longer just a bit. (R_knowsAboutEnemy)
-      AI use smokes when s/o hit or KIA. (R_USE_SMOKE_wounded, R_USE_SMOKE_killed).
-      Solved bug: AI reinforcement have problem to get into helicopters.
-      Solved bug: group "nowp" have problem to generate target when no other groups around
-      Solved bug: AI do not paradrop around positions of the enemy. (stuck)
-      Solved bug: Helicopters paradrop and fly too low.       
 
-===============================================================================================
+//-------------------------------------------------------------------------------------------------------------
+Historial de modificaciones:
+// ---------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 //Version: 5.0.6
 // -----------------------------------------------------------------------------

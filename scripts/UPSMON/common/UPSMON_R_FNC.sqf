@@ -1,7 +1,7 @@
 /*	
 	autor: !R	
 	
-	5.1.0
+	5.0.8 R3
 */
 	
 
@@ -9,7 +9,7 @@
 // get new position [x,y,x] from pos in distance and angle.
 // [_pos, _distance, _angle] call R_relPos3D;
 // [newX,newY,Z]	
-R_relPos3D = 
+UPSMON_relPos3D = 
 	{
 		private["_p","_d","_a","_x","_y","_z","_xout","_yout"];
 		_p=_this select 0; 
@@ -18,84 +18,16 @@ R_relPos3D =
 		_z=_p select 2;
 		_d=_this select 1; 
 		_a=_this select 2; 
-		_xout=_x + sin(_a) * _d; 
-		_yout=_y + cos(_a) * _d;
+		_xout=_x + sin(_a)*_d; 
+		_yout=_y + cos(_a)*_d;
 		[_xout,_yout,_z]
-	};
-
-	
-// [_unit] spawn R_ThrowSmoke;
-R_ThrowSmoke = 
-	{
-		private ["_unit","_shell",
-					"_moves","_unitPos","_pos","_flare","_direction"];
-
-		/*
-		_stanThrow = ["AwopPercMstpSgthWrflDnon_Start1", "AwopPercMstpSgthWrflDnon_Throw1","AwopPercMstpSgthWrflDnon_End1"];	
-		_kneeThrow = ["AwopPknlMstpSgthWrflDnon_Start", "AwopPknlMstpSgthWrflDnon_Throw" ,"AwopPknlMstpSgthWrflDnon_End"];
-		_proneThrow= ["AwopPpneMstpSgthWrflDnon_Start", "AwopPpneMstpSgthWrflDnon_Throw" ,"AwopPpneMstpSgthWrflDnon_End"]; 
-		*/
-		
-		_moves = ["AwopPercMstpSgthWrflDnon_Start1","AwopPknlMstpSgthWrflDnon_Start","AwopPpneMstpSgthWrflDnon_Start"];
-
-		_unit = _this select 0;
-		_shell = "SmokeShell";
-		_unitPos = unitPos _unit; 
-		
-		//Animation
-		switch (_unitPos) do {   
-			
-			case "Auto":
-			{	
-				_unit playMove (_moves select 1);	
-			};
-		
-			case "Up":
-			{	
-				_unit playMove (_moves select 0);	
-			};
-		
-			case "Middle":
-			{	
-				_unit playMove (_moves select 1);	
-			};
-			
-			case "Down":
-			{	
-				_unit playMove (_moves select 2);	
-			};
-		};	
-		
-		sleep 4;
-		_direction = direction _unit;		
-		
-		// use such bypass as setvelocity does not work in MP
-		_pos = position _unit;
-		_pos = [(_pos select 0),(_pos select 1),(_pos select 2)+1.5];
-		_pos = [_pos, 18, _direction] call R_relPos3D;
-				
-		if (alive _unit && canmove _unit) then {	
-			_flare = _shell createVehicle _pos;
-		};
-		
-		// setvelocity does not work in MP http://dev-heaven.net/issues/17949
-		/*
-		_vector = [18,direction _unit,0] call C B A_fnc_polar2vect;
-
-		_pos=position _unit;
-		_pos=[(_pos select 0),(_pos select 1),(_pos select 2)+2];
-		_flare = _shell createVehicle _pos;
-		_flare setPos _pos;
-		_flare setvelocity _vector;	
-		
-		*/
 	};
 	
 	
 	
 	// [_unit] call R_FN_deleteObsoleteWaypoints;
 	// leave only the last way point
-	R_FN_deleteObsoleteWaypoints = 
+	UPSMON_FN_deleteObsoleteWaypoints = 
 	{
 		private ["_unit","_grp"];
 		
@@ -111,7 +43,7 @@ R_ThrowSmoke =
 
 	// array = [_npc] call R_FN_vehiclesUsedByGroup;
 	// return array of vehicles used by group
-	R_FN_vehiclesUsedByGroup =
+	UPSMON_FN_vehiclesUsedByGroup =
 	{
 		private ["_npc","_vehicles"];
 		
@@ -132,7 +64,7 @@ R_ThrowSmoke =
 
 	// array = [_vehicle]  call R_FN_unitsInCargo;
 	// array of units in cargo of the vehicle (in vehicle and assigned as cargo)
-	R_FN_unitsInCargo =
+	UPSMON_FN_unitsInCargo =
 	{
 		private ["_vehicle","_x","_unitsInCargo"]; 
 		
@@ -154,7 +86,7 @@ R_ThrowSmoke =
 
 	// array = [_npc] call R_FN_allUnitsInCargo;
 	// array of all units in cargo of the group (not driver, commander or gunner)
-	R_FN_allUnitsInCargo =
+	UPSMON_FN_allUnitsInCargo =
 	{
 		private ["_npc","_vehicles","_unitsInCargo","_allUnitsInCargo"];
 		
@@ -163,10 +95,10 @@ R_ThrowSmoke =
 		
 		_allUnitsInCargo =[];
 		
-		_vehicles = [_npc] call R_FN_vehiclesUsedByGroup;
+		_vehicles = [_npc] call UPSMON_FN_vehiclesUsedByGroup;
 		
 		{
-			_unitsInCargo = [_x]  call R_FN_unitsInCargo;
+			_unitsInCargo = [_x]  call UPSMON_FN_unitsInCargo;
 			_allUnitsInCargo = _allUnitsInCargo + _unitsInCargo; 		
 		
 		} foreach _vehicles;
@@ -181,7 +113,7 @@ R_ThrowSmoke =
 	// <- _atdist: minimal dist to the _targetpos do getout 
 	// -> nothing
 	// nul = [_npc,_targetpos,_atdist] spawn R_SN_GetOutDist;
-	R_SN_GetOutDist = {
+	UPSMON_SN_GetOutDist = {
 		private["_vehicle","_npc","_target","_atdist","_getout","_dogetout","_driver","_commander","_targetpos","_dist","_vehpos","_vehicles"];	
 	
 		_npc = _this select 0;
@@ -196,37 +128,64 @@ R_ThrowSmoke =
 		_vehicle = vehicle _npc;
 		_vehpos = getpos _vehicle;
 		
-		_dist = round([_vehpos,_targetpos] call KRON_distancePosSqr); // dist to the target
+		_dist = round([_vehpos,_targetpos] call UPSMON_distancePosSqr); // dist to the target
 
-		// if (KRON_UPS_Debug>0) then {player sidechat format["%1: Getoutdist dist=%2 atdist=%3 ",typeof _vehicle,_dist, _atdist]}; 		
+		// if (UPSMON_Debug>0) then {player sidechat format["%1: Getoutdist dist=%2 atdist=%3 ",typeof _vehicle,_dist, _atdist]}; 		
 
 		// if _npc is in vehicle
 		if ( _vehicle != _npc || !(_npc iskindof "Man")) then {
 			
 			if ( (_dist) <= _atdist ) then {			
-				_vehicles = [_npc] call R_FN_vehiclesUsedByGroup; // vehicles use by the group			
+				_vehicles = [_npc] call UPSMON_FN_vehiclesUsedByGroup; // vehicles use by the group			
 				{
-					_dogetout = [_x] call R_FN_unitsInCargo; // units cargo in the vehicle
+					_dogetout = [_x] call UPSMON_FN_unitsInCargo; // units cargo in the vehicle
 					_driver = driver _x;
-					
-					if ( count _dogetout > 0 ) then { 	
-						//Stop the veh for 5.5 sek		
-						nul = [_vehicle,5] spawn MON_doStop;					
-						
-						sleep 0.8; // give time to actualy stop
-						
-						{					
-							_x spawn MON_GetOut;	
-							sleep 0.3;												
-						} foreach _dogetout;				
 
-						//We removed the id to the vehicle so it can be reused
-						_x setVariable ["UPSMON_grpid", 0, false];	
-						_x setVariable ["UPSMON_cargo", [], false];	
+					if ( count _dogetout > 0 ) then {					
+					// All units disembark if the vehicle is a Car
+						if (isnull (gunner _x)) then
+						{
+ 	
+							//Stop the veh for 5.5 sek		
+							nul = [_vehicle,5] spawn UPSMON_doStop;					
 						
-						[_npc,_x, _driver] spawn MON_checkleaveVehicle; // if every one outside, make sure driver can walk
-						sleep 0.01;		
+							sleep 0.8; // give time to actualy stop
+						
+							{					
+								_x spawn UPSMON_GetOut;	
+								sleep 0.3;												
+							} foreach _dogetout;				
+
+							//We removed the id to the vehicle so it can be reused
+							_x setVariable ["UPSMON_grpid", 0, false];	
+							_x setVariable ["UPSMON_cargo", [], false];	
+						
+							// [_npc,_x, _driver] spawn UPSMON_checkleaveVehicle; // if every one outside, make sure driver can walk
+							_driver enableAI "MOVE";
+							_driver stop false;
+							_driver spawn UPSMON_GetOut;
+							sleep 0.01;		
+					}
+					else
+					{
+							//Stop the veh for 5.5 sek		
+							nul = [_vehicle,5] spawn UPSMON_doStop;					
+						
+							sleep 0.8; // give time to actualy stop
+						
+							{					
+								_x spawn UPSMON_GetOut;	
+								sleep 0.3;												
+							} foreach _dogetout;				
+
+							//We removed the id to the vehicle so it can be reused
+							_x setVariable ["UPSMON_grpid", 0, false];	
+							_x setVariable ["UPSMON_cargo", [], false];	
+						
+							[_npc,_x, _driver] spawn UPSMON_checkleaveVehicle; // if every one outside, make sure driver can walk					
 					};
+					};
+					
 				} foreach _vehicles;
 			};
 		};
@@ -234,10 +193,10 @@ R_ThrowSmoke =
 	
 	// #define GOTHIT(X) 	([X] call R_FN_GOTHIT)
 	// nul = [_grpId] call R_FN_GOTHIT; 
-	R_FN_GOTHIT =
+	UPSMON_FN_GOTHIT =
 	{
 		_grpId = _this select 0;
-		if ((R_GOTHIT_ARRAY select _grpId) != 0) then
+		if ((count UPSMON_GOTHIT_ARRAY) > 0 || (count UPSMON_GOTKILL_ARRAY) > 0) then
 		{
 			true
 		}
@@ -249,35 +208,35 @@ R_ThrowSmoke =
 	
 		// use in gothit proces
 	// nul = [_unit, _shooter] spawn R_SN_EHHIT; 
-	R_SN_EHHIT = 
+	UPSMON_SN_EHHIT = 
 	{
 		private ["_unit","_shooter","_grpId"];
 		_unit = _this select 0;
 		_shooter = _this select 1;
-		_grpId = _unit getVariable ("UPSMON_grpid");
+		 _grp = group _unit;
 		 
-		if ((side _unit != side _shooter) && (R_GOTHIT_ARRAY select _grpId) == 0) then
+		if ((side _unit != side _shooter) && !(_grp in UPSMON_GOTHIT_ARRAY)) then
 		{
-			R_GOTHIT_ARRAY set [_grpId, 1]; 
-			// if (KRON_UPS_Debug > 0) then {player globalchat format["UNIT: %1, SHOOTER :%2 %3",_unit,_shooter,side _shooter]};
+			UPSMON_GOTHIT_ARRAY = UPSMON_GOTHIT_ARRAY + [_grp]; 
+			// if (UPSMON_Debug > 0) then {player globalchat format["UNIT: %1, SHOOTER :%2 %3",_unit,_shooter,side _shooter]};
 		};	
 	};
 
 	
 	// use in gothit proces
 	// nul = [_unit, _shooter] spawn R_SN_EHKILLED; 
-	R_SN_EHKILLED = 
+	UPSMON_SN_EHKILLED = 
 	{
 		private ["_unit","_shooter","_grpId"];
 		
 		_unit = _this select 0;
 		_shooter = _this select 1;
-		_grpId = _unit getVariable ("UPSMON_grpid");
+		_grp = group _unit;
 		
-		if ((side _unit != side _shooter) && (R_GOTHIT_ARRAY select _grpId) == 0) then
+		if ((side _unit != side _shooter) && !(_grp in UPSMON_GOTKILL_ARRAY)) then
 		{
-			R_GOTHIT_ARRAY set [_grpId, 2]; 
-			// if (KRON_UPS_Debug > 0) then {player globalchat format["UNIT: %1, SHOOTER :%2 %3",_unit,_shooter,side _shooter]};
+			UPSMON_GOTKILL_ARRAY = UPSMON_GOTKILL_ARRAY + [_grp]; 
+			// if (UPSMON_Debug > 0) then {player globalchat format["UNIT: %1, SHOOTER :%2 %3",_unit,_shooter,side _shooter]};
 		};
 	};
 
@@ -285,14 +244,14 @@ R_ThrowSmoke =
 	// logic is needed to display rGlobalChat
 	private ["_center","_group"];
 	_center = createCenter sideLogic; _group = createGroup _center;
-	R_Logic_civkill = _group createUnit ["LOGIC", [2,2,1], [], 0, "NONE"];
+	UPSMON_Logic_civkill = _group createUnit ["LOGIC", [1,1,1], [], 0, "NONE"];
 	_group = nil;
 	_center = nil;
 	
 	
-	// used in gothit proces
+	// use in gothit proces
 	// nul = [_unit, _shooter] spawn R_SN_EHKILLEDCIV; 
-	R_SN_EHKILLEDCIV = 
+	UPSMON_SN_EHKILLEDCIV = 
 	{
 		private ["_killer","_side"];
 		_killer = _this select 1;
@@ -302,7 +261,7 @@ R_ThrowSmoke =
 			
 			KILLED_CIV_COUNTER set [0,(KILLED_CIV_COUNTER select 0) + 1];			
 			
-			// if (KRON_UPS_Debug > 0) then {player globalchat format["KILLER: %1, %2", side _killer,KILLED_CIV_COUNTER ]};
+			// if (UPSMON_Debug > 0) then {player globalchat format["KILLER: %1, %2", side _killer,KILLED_CIV_COUNTER ]};
 			switch (side _killer) do
 			{
 				case west:
@@ -322,22 +281,19 @@ R_ThrowSmoke =
 			};		
 			KILLED_CIV_COUNTER set [4,_killer];
 			
-			//if (KRON_UPS_Debug > 0) then {player globalchat format["KILLER: %1", side _killer ]};
-			if (KRON_UPS_Debug > 0) then {player globalchat format["KILLED_CIV_COUNTER: %1",KILLED_CIV_COUNTER]};
+			//if (UPSMON_Debug > 0) then {player globalchat format["KILLER: %1", side _killer ]};
+			if (UPSMON_Debug > 0) then {player globalchat format["KILLED_CIV_COUNTER: %1",KILLED_CIV_COUNTER]};
 			if (R_WHO_IS_CIV_KILLER_INFO > 0) then {      
-				[R_Logic_civkill, nil , rglobalChat, format ["A CIVILIAN WAS KILLED BY %1",_killer]] call RE;
+				call compile format ["[{UPSMON_Logic_civkill globalChat ""A CIVILIAN WAS KILLED BY %1"";},""BIS_fnc_spawn""] call BIS_fnc_MP;",name _killer];
 			};	
 		};							
 	};
 
 	
 	//firedNear
-	R_SN_EHFIREDNEAR = 
+	UPSMON_SN_EHFIREDNEAR = 
 	{
 		private ["_civ"];
 		_civ = leader (_this select 0);
 		_civ setspeedmode "FULL";
 	};
-
-
-	

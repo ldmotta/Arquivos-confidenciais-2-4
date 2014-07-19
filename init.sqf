@@ -15,7 +15,7 @@ PARAMSHOWINTRO = false;
 
 
 //Ocupation
-#include "mission\occupation.hpp";
+// #include "mission\occupation.hpp";
 
 
 // waitUntil { !isNull player }; // Wait for player to initialize
@@ -59,7 +59,7 @@ null = [] execVM "briefing.sqf";
 // =========================== UPSMON INSTALATION ================================
 //Init UPSMON scritp (must be run on all clients)
 //Init UPSMON script
-call compile preprocessFileLineNumbers "scripts\Init_UPSMON.sqf";
+// call compile preprocessFileLineNumbers "scripts\Init_UPSMON.sqf";
 
 //Process statements stored using setVehicleInit
 // processInitCommands;
@@ -75,7 +75,6 @@ setviewdistance 1800;
 // [[[],"playerConnected.sqf"],"BIS_fnc_execVM",false,true] spawn BIS_fnc_MP;
 // Executes playerConnected.sqf script on server every time a player joins the game.
 
-player allowDamage false; player setCaptive true;
-sleep 2;
-hint 'left click on the map to teleport, you are in ghost mode';
-onMapSingleClick "player setpos _pos";
+// player allowDamage false; player setCaptive true;
+// sleep 2;
+// onMapSingleClick "player setpos _pos";
